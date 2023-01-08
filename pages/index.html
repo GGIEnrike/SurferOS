@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SurferOS</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link href="./styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <div class="titleBar"></div>
+
+    <div id="dock">
+      <div id="leftPart"></div>
+      <div id="apps">
+        <div class="app">
+          <img class="icon" src="./../icon.png">
+          <div class="shadow"></div>
+        </div>
+      </div>
+      <div id="rightPart">
+        <div id="status">
+          <span id="time"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./../dist/renderer.js"></script>
+  </body>
+</html>
