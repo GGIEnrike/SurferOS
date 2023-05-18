@@ -120,10 +120,17 @@ html, body {
     background:rgb(150, 183, 223);
 }
 
+#status:active {
+    background:rgb(111, 146, 188);
+}
+
 .titleBar {
-    width: 600px;
+    width: 850px;
     height: 30px;
 
-    background: rgb(209, 209, 209);
+    border-radius: 10px 10px 0 0;
+
+    /* background: rgb(209, 209, 209); */
+    background: hsl(209, 68%, 86%);
 }
 

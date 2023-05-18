@@ -42,7 +42,7 @@ titleBars.forEach((titleBar) => {
 
     // const barHeight = titleBar.clientHeight
 
-    const barHeight = 480
+    const barHeight = 680
 
     titleBar.style.position = 'absolute'
 

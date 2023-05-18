@@ -19,6 +19,8 @@ function createWindow() {
         }
     })
 
+    mainWindow.setFullScreen(true)
+
     mainWindow.loadFile(path.join(__dirname, "../pages/index.html"))
 
     mainWindow.webContents.openDevTools()
@@ -52,14 +54,21 @@ function createWindow() {
 
     mainWindow.addBrowserView(view)
 
-    view.setBounds({ x: 0, y: 52, width: 600, height: 450 })
+    view.setBounds({ x: 0, y: 52, width: 850, height: 600 })
 
     view.setBackgroundColor('#fff')
 
     view.webContents.loadURL('https://google.com/')
 
+    view.webContents.openDevTools({mode: 'right'})
+
+    view.webContents.setWindowOpenHandler((details) => {
+        view.webContents.loadURL(details.url)
+        return { action: "deny" }
+    })
+
     ipcMain.on('setWinPos', (_e: Event, id: number, x: number, y: number) => {
-        view.setBounds({ x: x, y: y + (mainWindow.isFullScreen() ? 30 : 52), width: 600, height: 450 })
+        view.setBounds({ x: x, y: y + (mainWindow.isFullScreen() ? 30 : 52), width: 850, height: 650 })
     })
 }
 
